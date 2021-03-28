@@ -27,6 +27,10 @@ Google Accessibility Test
     [Teardown]    Close All Browsers
  ```
 
-## Helpful Link to understand report
+### Robot Result
+
+<img src="https://i.ibb.co/7QKFy0N/Robotframework-Axe-Library.png" alt="Robotframework-Axe-Library" border="0">
+
+### Helpful Link to understand report
 
  - [Result Arrays](https://github.com/dequelabs/axe-core/blob/master/doc/API.md#result-arrays)
