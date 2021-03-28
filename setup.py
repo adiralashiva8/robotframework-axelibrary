@@ -20,7 +20,6 @@ Robot Framework keyword library wrapper around the axe-selenium-python library.
 """[1:-1]
 
 CLASSIFIERS = """
-License :: MIT License
 Operating System :: OS Independent
 Programming Language :: Python
 Topic :: Software Development :: Testing
