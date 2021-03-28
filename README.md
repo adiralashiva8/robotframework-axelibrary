@@ -1,2 +1,3 @@
-# robotframework-axe-selenium
-Robotframework library to use axe-selenium-python
+# robotframework-axelibrary
+
+Robot Framework keyword library wrapper around axe-selenium-python library
