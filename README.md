@@ -8,6 +8,7 @@ Robot Framework keyword library wrapper around [axe-selenium-python](https://git
  ```
  $ pip install robotframework-axelibrary
  ```
+ Keyword documentation [link](https://robotframework-axelibrary.netlify.app/)
 
 ## Usage:
 
