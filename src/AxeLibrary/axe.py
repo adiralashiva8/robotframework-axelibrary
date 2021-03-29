@@ -58,4 +58,42 @@ class AxeLibrary():
         |  = Attribute =  |  = Description =  |
         | Type            |  `violations`, `incomplete` are two supported values  |
         """
-        logger.info(self.axe_instance.report(self.results[type]))
+        # logger.info(self.axe_instance.report(self.results[type]))
+        type_results = self.axe_instance.report(self.results[type])
+        results = type_results.split("Rule Violated:")
+
+        for result in results:
+            if "Impact Level" in result:
+                final_result = result.strip()
+                chunks = final_result.split("\n")
+
+                html_text = """
+                <style>
+                    #demo table, #demo th, #demo td{
+                        border: 1px dotted black;
+                        border-collapse: collapse;
+                        table-layout: auto;
+                    }
+                </style>
+                <table id="demo" style="width:100%%">
+                    <tr>
+                        <th style="width:20%%">Issue</th>
+                        <th style="width:5%%">URL</th>
+                        <th style="width:7%%">Impact</th>
+                        <th style="width:10%%">Tags</th>
+                        <th>Element Affected</th>
+                    </tr>
+                    <tr>
+                        <td>%s</td>
+                        <td style="text-align:center"><a href="%s">Link</a></td>
+                        <td style="text-align:center">%s</td>
+                        <td style="text-align:center">%s</td>
+                        <td>%s</td>
+                    </tr>
+                </table>
+                """%(str(chunks[0]), (chunks[1].split("URL: "))[-1], (chunks[2].split("Impact Level: "))[-1],
+                 (chunks[3].split("Tags: "))[-1], str((final_result.split("\n\tElements Affected:\n\t"))[-1]))
+                logger.info(html_text, html=True)
+
+                # for index in range(len(chunk_results)):
+                #     logger.info(chunk_results[index])
