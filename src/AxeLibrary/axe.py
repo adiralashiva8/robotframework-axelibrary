@@ -77,17 +77,23 @@ class AxeLibrary():
                 </style>
                 <table id="demo" style="width:100%%">
                     <tr>
-                        <th style="width:20%%">Issue</th>
+                        <th style="width:50%%">Issue</th>
                         <th style="width:5%%">URL</th>
                         <th style="width:7%%">Impact</th>
                         <th style="width:10%%">Tags</th>
-                        <th>Element Affected</th>
                     </tr>
                     <tr>
                         <td>%s</td>
                         <td style="text-align:center"><a href="%s">Link</a></td>
                         <td style="text-align:center">%s</td>
                         <td style="text-align:center">%s</td>
+                    </tr>
+                </table>
+                <table id="demodesc" style="width:100%%">
+                    <tr>
+                        <th style="text-align:left">Element Affected</th>
+                    </tr>
+                    <tr>
                         <td>%s</td>
                     </tr>
                 </table>
