@@ -11,7 +11,7 @@ Wrapper of [axe-selenium-python](https://github.com/mozilla-services/axe-seleniu
 
  To install robotframework-axelibrary
  ```
- $ pip install robotframework-axelibrary==0.1.3
+ $ pip install robotframework-axelibrary==0.1.4
  ```
  Keyword documentation [link](https://robotframework-axelibrary.netlify.app/)
 
