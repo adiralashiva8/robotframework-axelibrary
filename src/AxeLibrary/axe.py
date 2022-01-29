@@ -16,7 +16,7 @@ class AxeLibrary():
         self.results = None
 
     @keyword("Run Accessibility Tests")
-    def run_accessibility_tests(self, result_file):
+    def run_accessibility_tests(self, result_file, axe_script_url=None, context=None, options=None):
         """
         Executes accessibility tests in current page by injecting axe-core javascript and write results into `result_file` (json). Return result statisitics
 
@@ -27,11 +27,14 @@ class AxeLibrary():
         seleniumlib = BuiltIn().get_library_instance('SeleniumLibrary')
         webdriver = seleniumlib.driver
         # create axe instance
-        self.axe_instance = Axe(webdriver)
+        if axe_script_url:
+            self.axe_instance = Axe(webdriver, axe_script_url)
+        else:
+            self.axe_instance = Axe(webdriver)
         # inject axe-core javascript into current page
         self.axe_instance.inject()
         # run axe accessibility validations
-        self.results = self.axe_instance.run()
+        self.results = self.axe_instance.run(context, options)
         # write results to specified file
         self.axe_instance.write_results(self.results, result_file)
         # generate json
