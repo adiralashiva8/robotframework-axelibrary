@@ -42,3 +42,9 @@ Google Accessibility Test
 ### Helpful Link
 
  - [Result Arrays](https://github.com/dequelabs/axe-core/blob/master/doc/API.md#result-arrays)
+
+---
+
+:star: repo if you like it
+
+---
