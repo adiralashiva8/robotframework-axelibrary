@@ -22,6 +22,9 @@ class AxeLibrary():
 
         |  = Attribute =  |  = Description =  |
         | result_file     |  File to store accessibility test results (.json). Ex: google.json  |
+        | axe_script_url  |  axe.js file path.  |
+        | context         |  Defines the scope of the analysis - the part of the DOM that you would like to analyze. This will typically be the document or a specific selector such as class name, ID, selector, etc.  |
+        | options         |  Set of options that change how axe.run works, including what rules will run. To pass options to specific checks, use axe.configure.  |
         """
         # get webdriver instance
         seleniumlib = BuiltIn().get_library_instance('SeleniumLibrary')
