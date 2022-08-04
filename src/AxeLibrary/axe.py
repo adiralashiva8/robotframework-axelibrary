@@ -16,7 +16,8 @@ class AxeLibrary():
         self.results = None
 
     @keyword("Run Accessibility Tests")
-    def run_accessibility_tests(self, result_file, axe_script_url=None, context=None, options=None):
+    def run_accessibility_tests(self, result_file, axe_script_url=None, context=None, options=None,
+                                lib_instance='SeleniumLibrary'):
         """
         Executes accessibility tests in current page by injecting axe-core javascript and write results into `result_file` (json). Return result statisitics
 
@@ -25,9 +26,10 @@ class AxeLibrary():
         | axe_script_url  |  axe.js file path.  |
         | context         |  Defines the scope of the analysis - the part of the DOM that you would like to analyze. This will typically be the document or a specific selector such as class name, ID, selector, etc.  |
         | options         |  Set of options that change how axe.run works, including what rules will run. To pass options to specific checks, use axe.configure.  |
+        | lib_instance    |  Alternate library to use in place of SeleniumLibrary.  |
         """
         # get webdriver instance
-        seleniumlib = BuiltIn().get_library_instance('SeleniumLibrary')
+        seleniumlib = BuiltIn().get_library_instance(lib_instance)
         webdriver = seleniumlib.driver
         # create axe instance
         if axe_script_url:
